@@ -1,0 +1,427 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: normal;
+}
+
+html {
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.container{
+    display: flex;
+    position: relative;
+    height: auto;
+    background-image:linear-gradient(90deg, rgb(0, 0, 250), rgb(181, 134, 255));
+}
+
+.task_manager_calendar--container{
+    background-color: white;
+    margin:  72px 32px;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.task_manager__container{
+    width: 25%;
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 3px;
+    /* border-right: 3px solid gray; */
+}
+
+.task_manager__header{
+    text-align: center;
+    padding: 20px 0px;
+    border-bottom: 2px solid grey;
+    opacity: 0.5;
+}
+
+.task_manager__user-infor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: 2px solid grey; */
+    margin: 24px;
+}
+
+.task_manager__user-infor--avatar__container{
+    
+    text-align: center;
+}
+
+.task_manager__user-infor--avatar{
+    width: 23%;
+    border-radius: 50%;
+
+}
+
+.task_manager__user-infor--name{
+    padding: 16px;
+    text-align: center;
+}
+
+.task_manager__small-font{
+    padding: 8px 0px;
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.task_manager__user-infor--button{
+    border-radius: 50%;
+    padding: 4px 5px;
+    border: none;
+    margin: 0px 10px;
+}
+
+.task_manager__user-infor--button i{
+    font-size: 16px;
+    color:blue;
+}
+
+.task_manager__user-infor--progress-index{
+    width: 100%;
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    text-align: right;
+}
+
+.task_manager__user-infor--progress-bar{
+    /* margin-top: 20px; */
+    height: 3px;
+    width: 100%;
+    background-color: rgb(194, 194, 194);
+    border-radius: 0.5px;
+}
+
+.task_manager__user-infor--progress-done{
+    height: 3px;
+    width: 35%;
+    background-color: blue;
+    border-radius: 0.5px;
+}
+
+.task_manager__user-infor--progress{
+    margin-top:  20px ;
+    width: 100%;
+    display: flex;   
+}
+
+.task_manager__user-infor--progress-item{
+    text-align: center;
+    width: 33.33%;
+}
+
+.task_manager__projects{
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+}
+
+.task_manager__projects--container{
+    margin: 16px 24px;
+}
+
+.task_manager__projects--header{
+    margin-bottom: 16px;
+}
+
+.task_manager__projects--item{
+    display: flex;
+    align-items: center;
+    margin: 8px 0px;
+}
+
+.task_manager__team--container{
+    margin: 16px 24px;
+    padding-bottom: 32px;
+}
+
+.task_manager__team--avatar{
+    width: 13%;
+    margin: 0px 12px 8px 0px;
+    border-radius: 50%;
+}
+
+.calendar__container{
+    
+    background-color: aliceblue;
+    width: 75%;
+    
+}
+
+.calendar__header{
+    background-color: rgba(255, 255, 255,0.8);
+    opacity: 1;
+    display: flex;
+    padding: 20px 0px;
+}
+
+.calendar__header--search-btn{
+    margin-left: 20px;
+    width: 10%;
+    border: none;
+    background-color: white;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.calendar__header--header{
+    width: 80%;
+    text-align: center;
+}
+
+.calendar__header--more{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 10%;
+    border: none;
+    background-color: white;
+    text-align: end;
+    margin-right: 20px;
+    font-size: 6px;
+    opacity: 0.5;
+}
+
+.calendar__content{
+    border-top: 2px solid rgb(194, 194, 194);
+    padding: 24px 64px;
+    /* opacity: 0.5; */
+    
+}
+.calendar__content--container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+    position: relative;
+}
+
+.calendar__content--container button{
+    border: none;
+}
+
+.calendar__switch--mode{
+    width: 33.33%;
+    
+}
+.calendar_switch-week-btn{
+    border-radius: 16px 0 0 16px;
+    padding: 4px 12px;
+    background-color: blue;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.calendar_switch-month-btn{
+    border-radius: 0 16px 16px 0;
+    padding: 6px 12px;
+    background-color: white;
+    color: blue;
+    font-weight: 900;
+    cursor: pointer;
+}
+.calendar__switch--btn-group{
+    display: flex;
+    border: 1px solid blue;
+    width: fit-content;
+    border-radius: 16px;cursor: pointer;
+    
+}
+.calendar__weekends{
+    width: 33.33%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.calendar__switch--month{
+    width: 33.33%;
+}
+
+.calendar__switch--m-btn{
+    background-color: inherit;
+    cursor: pointer;
+}
+.calendar__weekends-btn{
+    margin-right: 24px;
+    border-radius: 16px;
+    padding: 6px 16px;
+    border: 1px solid gray !important;
+    color: gray;
+    background-color: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.calendar__add-task-btn{  
+    border-radius: 16px;
+    padding: 6px 16px;
+    border: 1px solid gray !important;
+    color: gray;
+    background-color: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.calendar__month{
+    font-weight: 700;
+}
+
+.calendar__year{
+    font-size: 10px;
+    opacity: 0.7;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.calendar__month--container{
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.calendar__day--col{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.calendar__day--row{
+    width: 100%;
+    display: flex;
+}
+
+.calendar__day-of-week{
+    width: 20%;
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid rgb(199, 199, 199);
+    color: gray;
+    font-weight: 700;
+}
+.calendar__day--container{
+    position: relative;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 6em;
+    background-color: white;
+    border: 1px solid rgb(199, 199, 199);
+    color: black;
+}
+.calendar__day{
+    /* width: 100%; */
+    padding: 16px;
+    text-align: left;
+    
+    font-weight: 900;
+    
+    /* transition: width 1s, height 1s; */
+}
+
+
+.calendar__day--task{
+    padding: 0px 24px;
+    font-size: 0.6rem;
+}
+
+.calendar__weekend{
+    display: none;
+}
+
+.calendar__weekday{
+    display: block;
+}
+
+.calendar__add-task--container{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -25%);
+    right: 1%;
+    padding: 24px;
+    z-index: 1;
+    width: 22%;
+    height: auto;
+    background-color: white;
+    border: 00.5px solid rgb(211, 209, 209);
+    align-self: flex-end;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.calendar__add-task--row{
+    position: relative;
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+.calendar__add-task--category-btn{
+    border: none;
+    border-radius: 16px;
+    padding: 4px 8px;
+    color: white;
+    background-color: rgb(197, 197, 197);
+    cursor: pointer;
+}
+
+.calendar__add-task--date{
+    position: absolute;
+    font-size: 10px;
+    right: 0;
+}
+
+.calendar__add-task--title-input{
+    border: none;
+    margin: 0 1rem;
+    font-size: 20px;
+    width: 90%;
+    font-weight: bolder;
+}
+
+.calendar__add-task--des-input{
+    border: none;
+    margin: 0 3rem;
+    width: 80%;
+    font-weight: 700;
+}
+
+.alignRight{
+    display: flex;
+    justify-content: end;
+}
+
+.calendar__category--container{
+    display: none;
+    padding: 24px;
+    position: absolute;
+    background-color: aliceblue;
+    top: 32%;
+    transform: translate(0%, -25%);
+    right: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 16px;
+}
+
+.calendar__category--radio{
+    margin: 8px;
+}
+
+.calendar__check-btn{
+    border: none;
+    width: fit-content;
+    background-color: inherit;
+}

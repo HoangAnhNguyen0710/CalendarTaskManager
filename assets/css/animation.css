@@ -1,0 +1,3 @@
+.calendar__day--container:hover, .calendar__day:hover{
+    background-color: rgb(177, 217, 255) !important;
+}

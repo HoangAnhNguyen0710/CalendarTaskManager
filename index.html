@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title -->
+    <title>Calendar Task Manager</title>
+    <!-- add css & js  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animation.css">
+    <script src="./assets/js/script.js"></script>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="task_manager_calendar--container">
+            <div class="task_manager__container">
+                <header class="task_manager__header">TASK MANAGER</header>
+                <div class="task_manager__user-infor">
+                    <div class="task_manager__user-infor--avatar__container">
+                        <img class="task_manager__user-infor--avatar" src="./assets/img/hoanh.jpg" alt="" >
+                    </div>
+                    <div class="task_manager__user-infor--name">
+                        <b>Hoang Anh Nguyen</b>
+                        <p class="task_manager__small-font">hoanganhnguyen07102001@gmail.com</p>
+                    </div>
+                    <div class="task_manager__user-infor--options">
+                        <button class="task_manager__user-infor--button"><i class="fa fa-cog"></i></button>
+                        <button class="task_manager__user-infor--button"><i class="fa fa-envelope"></i></button>
+                        <button class="task_manager__user-infor--button"><i class="fa fa-bell"></i></button>
+                    </div>
+                    <div class="task_manager__user-infor--progress-index">12/34</div>
+                    <div class="task_manager__user-infor--progress-bar"><div class="task_manager__user-infor--progress-done"></div></div>
+                    <div class="task_manager__user-infor--progress">
+                        <div class="task_manager__user-infor--progress-item">
+                            <b>12</b><br><p class="task_manager__small-font"><b>Completed</b><br>task</p>
+                        </div>
+                        <div class="task_manager__user-infor--progress-item">
+                            <b>22</b><br><p class="task_manager__small-font"><b>To do</b><br>task</p>
+                        </div>
+                        <div class="task_manager__user-infor--progress-item">
+                            <b>69</b><br><p class="task_manager__small-font"><b>All</b><br>completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="task_manager__projects">
+                    <div class="task_manager__projects--container">
+                        <div class="task_manager__projects--header"><b>PROJECTS</b></div>
+                        <div class="task_manager__projects--item"><i class="fa fa-circle-o" style="color: blueviolet; margin-right: 4px;"></i><span class="task_manager__small-font">Marketing</span></div>
+                        <div class="task_manager__projects--item"><i class="fa fa-circle-o" style="color: rgb(131, 131, 255); margin-right: 4px;"></i><span class="task_manager__small-font">Design</span></div>
+                        <div class="task_manager__projects--item"><i class="fa fa-circle-o" style="color: rgb(230, 230, 42); margin-right: 4px;"></i><span class="task_manager__small-font">Development</span></div>
+                        <div class="task_manager__projects--item"><i class="fa fa-circle-o" style="color: rgb(255, 133, 89); margin-right: 4px;"></i><span class="task_manager__small-font">Finance</span></div>
+                    </div>
+                </div>
+                <div class="task_manager__team">
+                    <div class="task_manager__team--container">
+                        <div class="task_manager__projects--header"><b>TEAM</b></div>
+                        <img src="./assets/img/hoanh.jpg" alt="" class="task_manager__team--avatar">
+                        <img src="./assets/img/hoanh.jpg" alt="" class="task_manager__team--avatar">
+                        <img src="./assets/img/hoanh.jpg" alt="" class="task_manager__team--avatar">
+                        <img src="./assets/img/hoanh.jpg" alt="" class="task_manager__team--avatar">
+                        <img src="./assets/img/hoanh.jpg" alt="" class="task_manager__team--avatar">
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="calendar"> -->
+            <div class="calendar__container">
+                <header class="calendar__header">
+                    <button class="calendar__header--search-btn"><i class="fa fa-search" style="margin-right:8px;"></i> <span class="task_manager__small-font"> Search...</span></button>
+                    <div class="calendar__header--header"><b>Calendar</b></div>
+                    <button class="calendar__header--more "><i class="fa fa-circle" style="margin-right: 8px;"></i> <i class="fa fa-circle" style="margin-right: 8px;"></i> <i class="fa fa-circle" style="margin-right: 8px;"></i></button>
+                </header>
+            <div class="calendar__content">
+                <div class="calendar__content--container">    
+                    <div class="calendar__switch--mode">
+                    <div class="calendar__switch--btn-group">
+                        <button class="calendar_switch-week-btn task_manager__small-font">Week</button>
+                        <button class="calendar_switch-month-btn task_manager__small-font">Month</button>
+                    </div>   
+                    </div>
+                    <div class="calendar__switch--month">
+                        <button class="calendar__switch--m-btn" id="prev-btn" onclick="changeMonth(1)" value = ""><i class="fa fa-chevron-left"></i></button>
+                        <span class="calendar__month"></span>
+                        <button class="calendar__switch--m-btn" id="next-btn" onclick="changeMonth(2)" value = ""><i class="fa fa-chevron-right"></i></button>
+                        <p class="calendar__year" >2022</p>
+                    </div>
+                    
+                    <div class="calendar__weekends">
+                        <button class="calendar__weekends-btn" onclick="changetoWeekendorWeekday()">Weekends</button>
+                        <button class="calendar__add-task-btn" onclick="addTaskSwitch()">Add task</button>
+                    </div>
+                </div>
+                <div class="calendar__month--container">
+                    <!-- add Task -->
+                    <!-- <form> -->
+                    <div class="calendar__add-task--container">
+                        <div class="calendar__add-task--row">
+                        <button class="calendar__add-task--category-btn" onclick="Set_Category()"><i class="fa fa-plus"></i> Category</button>
+                        <div class="tab" style="padding: 0 1.8rem;"></div>
+                        <!-- <i class="fa fa-calendar" style="margin: 0 0 0 2rem;"></i> -->
+                        <span class="calendar__add-task--date"></span>
+                        </div>
+                        <div class="calendar__add-task--row" style="font-size: 32px;">
+                            <button class="calendar__check-btn"><i class="fa fa-check-circle-o" style="font-size: 2rem;"></i></button>
+                            <input class="calendar__add-task--title-input" type="text" placeholder="Title of the task">
+                        </div>
+                        <div class="calendar__add-task--row"> <input class="calendar__add-task--des-input" type="text" placeholder="Description..."></div>
+                        <div class="calendar__add-task--row alignRight"> 
+                            <button class="calendar__add-task-btn" onclick="SaveTask()" >Add task</button>
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                    <!-- choose category -->
+                    <div class="calendar__category--container">
+                        <form name="choose_cat" onchange="SaveCategory()">
+                            <input type="radio" name="category" class="calendar__category--radio" value="Marketing">
+                            <label class="calendar__category--radio" for="Marketing">Marketing</label><br>
+                            <input type="radio" name="category" class="calendar__category--radio" value="Design">
+                            <label class="calendar__category--radio" for="Design">Design</label><br>
+                            <input type="radio" name="category" class="calendar__category--radio" value="Development">
+                            <label class="calendar__category--radio" for="Development">Development</label><br>
+                            <input type="radio" name="category" class="calendar__category--radio" value="Finance">
+                            <label class="calendar__category--radio" for="Finance">Finance</label><br>
+                        </form>
+                    </div>
+                    <!-- calendar -->
+                    <div class="calendar__day--row">
+                        <div class="calendar__day-of-week calendar__weekday">Monday</div>
+                        <div class="calendar__day-of-week calendar__weekday">Tueday</div>
+                        <div class="calendar__day-of-week calendar__weekday">Wednesday</div>
+                        <div class="calendar__day-of-week calendar__weekday">Thursday</div>
+                        <div class="calendar__day-of-week calendar__weekday">Friday</div>
+                        <div class="calendar__day-of-week calendar__weekend">Saturday</div>
+                        <div class="calendar__day-of-week calendar__weekend">Sunday</div>
+                    </div>
+                    <div class="calendar__day--row">
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>  
+                    </div>
+                    <div class="calendar__day--row">
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>  
+                    </div>
+                    <div class="calendar__day--row">
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>  
+                    </div>
+                    <div class="calendar__day--row">
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>  
+                    </div>
+                    <div class="calendar__day--row">
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekday">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>
+                        <div class="calendar__day--container calendar__weekend">
+                            <div class="calendar__day "></div>
+                            <div class="calendar__day--task"></div>
+                        </div>  
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // set tháng và năm theo lịch hiện tại
+        const date = new Date();
+        Set_Month(date.getMonth());   
+        const y = document.querySelector("p.calendar__year");
+        const prev = document.getElementById("prev-btn");
+        const next = document.getElementById("next-btn");
+        prev.value = date.getMonth();
+        next.value = date.getMonth();
+        y.innerHTML = date.getFullYear();
+        Set_Day(date.getMonth(), date.getFullYear());
+
+        // set ngày tháng năm trong add task khi ấn nút, mặc định ban đầu là ngày hiện tại
+        const task = document.getElementsByClassName("calendar__day");
+        const taskdate = document.querySelector("span.calendar__add-task--date");
+        const year = document.querySelector("p.calendar__year");
+        const month = document.querySelector("button#prev-btn");
+        taskdate.innerHTML =  (Number(month.value) + 1) + '-' + date.getDate() + '-' + year.innerHTML;
+        for(let i = 0; i< task.length; i++){
+        task[i].addEventListener("click", function(){
+            // alert("aaa");
+            taskdate.innerHTML = (Number(month.value) + 1) + '-' + task[i].innerHTML +  '-' + year.innerHTML;
+        });
+        }
+
+        // const container = document.querySelector("div.calendar__content");
+        // container.addEventListener("click", function(){
+        //     const task = document.querySelector("div.calendar__add-task--container");
+        //     const btn = document.querySelectorAll("button.calendar__add-task-btn");
+        //     HideTask(task, btn);
+        // })
+        
+    </script>
+</body>
+</html>
